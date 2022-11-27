@@ -1,0 +1,55 @@
+{% extends "home.html" %}
+{% block title %}
+<title>Eshop | Login Page</title>
+{% endblock title %}
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row my-3">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10"></div>
+        <h5 class="bg-primary text-white text-center">Signup Page</h5>
+        {% for i in messages %}
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+             {{i}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %} 
+        <form method="post" action="">
+            {% csrf_token %} 
+          <div class="row">
+            <div class="col-md-6 col-12">
+                <label  class="form-label">Full Name</label>
+                <input type="name" class="form-control" name="name" placeholder="Enter Your Full Name">
+            </div>
+            <div class="col-md-6 col-12">
+                <label  class="form-label">Enter User Name</label>
+                <input type="username" class="form-control" name="username" placeholder="Enter user Name">
+            </div>
+            <div class="mb-3"></div>
+            <div class="col-md-6 col-12">
+                <label for="exampleInputEmail1" class="form-label">Enter Email Address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Your Email Address">
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="exampleInputEmail1" class="form-label">Enter Phone Number</label>
+                <input type="phone" class="form-control" name="phone" placeholder="Enter Phone Number">
+            </div>
+            <div class="mb-3">
+                <div class="col-md-6 col-12">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" name="cpassword">
+                    </div>
+                </div>
+            <button type="submit" class="btn btn-primary w-100">Craeate Account</button>
+        </form>
+            <a href="/login/" class="text-decoration-none" >Already user ? Login your Account</a>
+        <div class="col-md-2 col-1"></div>
+    </div>
+
+</div>
+
+{% endblock content %}

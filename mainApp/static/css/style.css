@@ -1,0 +1,34 @@
+.background{
+      background-color: blueviolet;
+
+
+}
+.btn:hover{
+      color: blue
+}
+.banner-section{
+  position: relative;
+}
+.banner-btn{
+         left: 30px;
+         width: 200px;
+         position: absolute;
+         padding: 10px;
+}
+.banner-btn:hover{
+      box-shadow: 0 0 10px black;
+      color: black;
+
+}        
+#banner-btn1{
+      top: 20%;
+
+}
+#banner-btn2{
+      top: 40%;
+
+}
+#banner-btn3{
+      top: 60%;
+
+}

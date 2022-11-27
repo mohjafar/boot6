@@ -1,0 +1,82 @@
+{% extends "home.html" %}
+{% block title %}
+<title>Eshop | Login Page</title>
+{% endblock title %}
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row my-3">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10"></div>
+        <h5 class="bg-primary text-white text-center">Update Profile Page</h5>
+        {% for i in messages %}
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+             {{i}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %} 
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %} 
+          <div class="row mb-3">
+            <div class="col-md-6 col-12">
+                <label  class="form-label">Full Name</label>
+                <input type="name" class="form-control" name="name" placeholder="Enter Your Full Name" value="{{user.name}}">
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6 col-12">
+                    <label  class="form-label">Profile Pic</label>
+                    <input type="file" class="form-control" name="pic">
+            </div>
+            <div class="mb-3"></div>
+            <div class="col-md-6 col-12">
+                <label for="exampleInputEmail1" class="form-label">Enter Email Address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter Your Email Address" value="{{user.email}}">
+            </div>
+            <div class="col-md-6 col-12">
+                <label for="exampleInputEmail1" class="form-label">Enter Phone Number</label>
+                <input type="phone" class="form-control" name="phone" placeholder="Enter Phone Number" >
+            </div>
+
+            <div class="mb-3">
+                <div class="col-md-6 col-12">
+                        <label class="form-label">House or building Number</label>
+                        <input type="text" class="form-control" name="addressline1" placeholder="Enter House or Building Number" value="{{user.addressline1}}">
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <label class="form-label">Street Number or Near By </label>
+                        <input type="text" class="form-control" name="addressline2" placeholder="Enter Street number or near by" value="{{user.addressline2}}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div class="col-md-6 col-12">
+                            <label class="form-label">Village Or Locality</label>
+                            <input type="text" class="form-control" name="addressline3" placeholder="Enter Village Or Locality" value="{{user.addressline3}}">
+                        </div>
+    
+                        <div class="col-md-6 col-12">
+                            <label class="form-label">PIN CODE </label>
+                            <input type="number" class="form-control" name="pin" placeholder="Enter your Area pin Code" value="{{user.pin}}">
+                        </div>
+                    </div>
+
+                <div class="mb-3">
+                    <div class="col-md-6 col-12">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" name="city" placeholder="Enter Your City Name">
+                            </div>
+        
+                            <div class="col-md-6 col-12">
+                                <label class="form-label">State </label>
+                                <input type="text" class="form-control" name="state" placeholder="Enter your State">
+                            </div>
+                        </div>
+
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </form>
+        <div class="col-md-2 col-1"></div>
+    </div>
+
+</div>
+
+{% endblock content %}

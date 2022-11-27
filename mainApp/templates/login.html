@@ -1,0 +1,39 @@
+{% extends "home.html" %}
+
+{% block title %}
+<title>Eshop | Login Page</title>
+{% endblock title %}
+{% block content %}
+<div class="container-fluid mt-3">
+    <div class="row my-3">
+        <div class="col-md-2 col-1"></div>
+        <div class="col-md-8 col-10"></div>
+        <h5 class="bg-primary text-white text-center">This is Login Part</h5>
+        {% for i in messages %}
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+             {{i}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          {% endfor %} 
+        <form method="post" action="">
+            {% csrf_token %} 
+             <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Enter User Name</label>
+                <input type="text" class="form-control" name="username" placeholder="Enter Currect user name">
+             </div>
+             <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="d-flex justify-content-between ">
+            <a href="/forget-username/"class="text-decoration-none " >Forget Password</a>
+            <a href="/signup/" class="text-decoration-none" >New user? Create a account</a>
+        </div>
+        <div class="col-md-2 col-1"></div>
+    </div>
+
+</div>
+
+{% endblock content %}
